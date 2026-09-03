@@ -3,7 +3,7 @@
 
 port: 7880
 bind_addresses:
-  - "202.139.216.14"
+  - "0.0.0.0"
 
 redis:
   address: "127.0.0.1:6379"
