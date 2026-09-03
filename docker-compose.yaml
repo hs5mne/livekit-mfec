@@ -9,6 +9,7 @@ services:
     network_mode: host
     environment:
       - REDIS_PASSWORD=${REDIS_PASSWORD}
+      - TZ=Asia/Bangkok
     volumes:
       - ./redis.conf:/etc/redis.conf:ro
       - ./redis_data:/data
@@ -27,6 +28,7 @@ services:
     environment:
       - "LIVEKIT_KEYS=${LIVEKIT_API_KEY}: ${LIVEKIT_API_SECRET}"
       - REDIS_PASSWORD=${REDIS_PASSWORD}
+      - TZ=Asia/Bangkok
     volumes:
       - ./livekit.yaml:/etc/livekit.yaml:ro
     depends_on:
