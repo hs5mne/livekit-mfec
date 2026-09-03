@@ -1,0 +1,30 @@
+# LiveKit Server configuration
+# Docs: https://docs.livekit.io/server/config/
+
+port: 7880
+bind_addresses:
+  - "10.6.101.132"
+
+redis:
+  address: "127.0.0.1:6379"
+
+room:
+  auto_create: true
+  empty_timeout: 600
+  max_participants: 10
+
+rtc:
+  tcp_port: 7881
+  port_range_start: 50000
+  port_range_end: 60000
+  use_external_ip: true
+  enable_loopback_candidate: false
+
+log_level: info
+
+# Optional TURN configuration
+# turn:
+#   enabled: true
+#   domain: turn.yourdomain.com
+#   tls_port: 5349
+#   secret: "YOUR_TURN_SECRET"
