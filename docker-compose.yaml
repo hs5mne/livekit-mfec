@@ -2,7 +2,7 @@ name: livekit-core
 
 services:
   redis:
-    image: harbor.rama.mahidol.ac.th/livekit/redis:7-alpine
+    image: redis:7-alpine
     container_name: livekit-redis
     command: sh -c 'redis-server /etc/redis.conf --requirepass "$${REDIS_PASSWORD}"'
     restart: unless-stopped
@@ -19,7 +19,7 @@ services:
       retries: 5
 
   livekit:
-    image: harbor.rama.mahidol.ac.th/livekit/livekit-server:v1.13
+    image: livekit/livekit-server:v1.13
     container_name: livekit-server
     command: --config /etc/livekit.yaml
     restart: unless-stopped
@@ -34,7 +34,7 @@ services:
         condition: service_healthy
 
   livekit-service:
-    image: harbor.rama.mahidol.ac.th/livekit/rama-livekit-service:v1.0.0-uat
+    image: rama-livekit-service:v1.0.0-uat
     container_name: rama-livekit-service
     restart: unless-stopped
     pull_policy: always
