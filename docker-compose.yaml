@@ -34,7 +34,7 @@ services:
         condition: service_healthy
 
   livekit-service:
-    image: rama-livekit-service:v1.0.0-uat
+    image: hs5mne/rama-livekit-service:v1.0.0-uat
     container_name: rama-livekit-service
     restart: unless-stopped
     pull_policy: always
